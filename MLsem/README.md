@@ -20,8 +20,9 @@ types.
 
 * Top = `any`
 * Bottom = `empty`
-* Dynamic = `any` for benchmark inputs. MLsem also accepts `dyn` as a cast or
-  coercion target for dynamic typing.
+* Dynamic = `any`?
+
+TODO: Seek help from Mickaël. It seems that `any` is the top type and `empty` is the bottom type, since `~any` is `empty` and vice versa; however the documentation also says the type for un-annotated `val`s (i.e. `any`) is "the dynamic type (gradual typing)".
 
 
 > Q. What base types does this implementation use? Why?
@@ -29,7 +30,7 @@ types.
 `string`, `int`, and `bool`
 
 These are simple MLsem base types corresponding to the If-T benchmark's string,
-number, and boolean cases.
+number, and boolean cases. More concretely, they may be regarded as the (possibly infinite) union of all the singleton types. For example, `bool` is equivalent to `true|false`. Different from the implementation of If-T in other languages such as Python, this does not lead to problems.
 
 
 > Q. What container types does this implementation use (for objects, tuples, etc)? Why?
@@ -79,8 +80,7 @@ One-way predicates can be expressed by leaving the positive case imprecise, e.g.
 
 > Q. Are any benchmarks inexpressible? Why?
 
-All core benchmarks are expressible. The observed result for `connectives` is
-`x`: MLsem does not retain enough refinement through the helper-level conjunction
+All core benchmarks are expressible. MLsem didn't pass `connectives`: MLsem does not retain enough refinement through the helper-level conjunction
 of negated predicate results in the `connectives_success_h` case.
 
 
@@ -100,7 +100,7 @@ the benchmark only needs static checking behavior.
 
 > Q. Are any examples inexpressible? Why?
 
-No. All example programs produce `O` with the current implementation.
+No. All example programs pass with the current implementation.
 
 
 > Q. Are any examples expressed particularly well, or particularly poorly? Explain.
