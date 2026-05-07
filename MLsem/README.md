@@ -20,9 +20,7 @@ types.
 
 * Top = `any`
 * Bottom = `empty`
-* Dynamic = `any`?
-
-TODO: Seek help from Mickaël. It seems that `any` is the top type and `empty` is the bottom type, since `~any` is `empty` and vice versa; however the documentation also says the type for un-annotated `val`s (i.e. `any`) is "the dynamic type (gradual typing)".
+* Dynamic = `dyn`; it is fully supported by MLsem's internal AST, however the surface language does not allow using dyn in a type for now (except if the whole type is just dyn).
 
 
 > Q. What base types does this implementation use? Why?
