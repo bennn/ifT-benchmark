@@ -27,6 +27,7 @@ The tested versions are:
 | Sorbet       | 0.6.12829 | See [`Sorbet/Gemfile.lock`](https://github.com/utahplt/ifT-benchmark/blob/main/Sorbet/Gemfile.lock)                   |
 | Luau         | 0.717     | https://github.com/luau-lang/luau/releases/tag/0.717                                                                  |
 | MLsem        | v1.0.1-51-g868afd7 | Must be installed separately as `mlsem` on `PATH`                                                            |
+| Clojure      | 1.12.4    | https://clojure.org/guides/install_clojure                                                                            |
 
 First, clone this repository:
 

@@ -27,6 +27,10 @@ if ! command_exists mlsem; then
     echo "Error: mlsem is not installed. Please install MLsem first and ensure it is on PATH."
     exit 1
 fi
+if ! command_exists luau; then
+    echo "Error: luau is not installed. Please install Luau first."
+    exit 1
+fi
 
 # Install TypeScript
 echo "Setting up TypeScript..."
@@ -84,11 +88,6 @@ echo "Setting up Sorbet..."
 # https://gist.github.com/esteedqueen/b605cdf78b0060299322033b6a60afc3
 cd Sorbet
 bundle install
-cd ..
-
-echo "Setting up Luau..."
-cd Luau
-# TODO
 cd ..
 
 echo "Setting up Typed Clojure..."
