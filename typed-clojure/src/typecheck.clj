@@ -33,4 +33,4 @@
       (println (str "Function " f " failed: " (.getMessage e))))))
 (require '[typed-clojure.main :reload :force])
 (t/check-ns-clj 'typed-clojure.main :verbose-types true :verbose-forms true)
-(load-file "src/typed_clojure/test.clj") ;; TODO
+(t/check-ns-clj 'typed-clojure.examples :verbose-types true :verbose-forms true)
